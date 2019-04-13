@@ -22,7 +22,7 @@
                                 <rect key="frame" x="131" y="287" width="113" height="30"/>
                                 <state key="normal" title="Add Roommates"/>
                                 <connections>
-                                    <segue destination="OTx-be-U9q" kind="show" id="FsT-Wf-ykh"/>
+                                    <segue destination="lkm-kh-GOI" kind="show" id="KwT-RC-scr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBz-3s-ZqQ">
@@ -36,7 +36,7 @@
                                 <rect key="frame" x="147" y="325" width="81" height="30"/>
                                 <state key="normal" title="Add Chores"/>
                                 <connections>
-                                    <segue destination="SFZ-S8-egS" kind="show" id="clu-3r-bov"/>
+                                    <segue destination="xdq-BW-MDZ" kind="show" id="uuD-gM-Xwt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chores App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4l-GH-fg3">
@@ -70,34 +70,66 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--Add Chores-->
-        <scene sceneID="JMr-gn-6LF">
+        <!--Add Roommates-->
+        <scene sceneID="nak-JB-ghu">
             <objects>
-                <viewController id="SFZ-S8-egS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tzl-XR-DWN">
+                <tableViewController id="lkm-kh-GOI" customClass="RoommateTableViewController" customModule="ChoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rdR-c4-APD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoommateTableViewCell" id="TAL-Ev-nC1" customClass="RoommateTableViewCell" customModule="ChoreApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TAL-Ev-nC1" id="k3J-Ew-HWW" customClass="UITableViewCell">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nne-Na-ACb">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="nne-Na-ACb" id="biL-SE-7Kd"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lkm-kh-GOI" id="5kS-TP-CK0"/>
+                            <outlet property="delegate" destination="lkm-kh-GOI" id="n9v-0G-LrP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Roommates" id="oDs-hX-fC0">
+                        <rightBarButtonItems>
+                            <barButtonItem id="43k-58-84q"/>
+                            <barButtonItem systemItem="add" id="PQR-Kx-gvd">
+                                <connections>
+                                    <segue destination="il6-Q5-NJ5" kind="presentation" id="gF3-4p-qhp"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Izb-ME-CbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877" y="132"/>
+        </scene>
+        <!--New Roommate-->
+        <scene sceneID="MlO-Nb-4yb">
+            <objects>
+                <viewController id="MVJ-ub-Txf" customClass="RoommateViewController" customModule="ChoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RJE-sG-ISG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EnX-Nm-siG">
-                                <rect key="frame" x="16" y="148" width="343" height="499"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Oku-iB-IUq">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oku-iB-IUq" id="0iQ-4M-fAy">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-NB-8WN">
-                                <rect key="frame" x="172" y="110" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrf-Xf-djf">
-                                <rect key="frame" x="16" y="72" width="343" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Roommate Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d1r-MH-DaE">
+                                <rect key="frame" x="16" y="84" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -105,24 +137,70 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ffW-mc-61C" firstAttribute="trailing" secondItem="qrf-Xf-djf" secondAttribute="trailing" constant="16" id="2pp-ah-rvd"/>
-                            <constraint firstItem="EnX-Nm-siG" firstAttribute="leading" secondItem="ffW-mc-61C" secondAttribute="leading" constant="16" id="GzK-9m-RDw"/>
-                            <constraint firstItem="qrf-Xf-djf" firstAttribute="top" secondItem="ffW-mc-61C" secondAttribute="top" constant="8" id="IQN-Bk-Lh2"/>
-                            <constraint firstItem="Ltl-NB-8WN" firstAttribute="top" secondItem="qrf-Xf-djf" secondAttribute="bottom" constant="8" id="NR7-iw-oxg"/>
-                            <constraint firstItem="ffW-mc-61C" firstAttribute="trailing" secondItem="Ltl-NB-8WN" secondAttribute="trailing" constant="173" id="TP8-01-Qw1"/>
-                            <constraint firstItem="ffW-mc-61C" firstAttribute="bottom" secondItem="EnX-Nm-siG" secondAttribute="bottom" constant="20" id="hGJ-nC-Ssf"/>
-                            <constraint firstItem="Ltl-NB-8WN" firstAttribute="leading" secondItem="ffW-mc-61C" secondAttribute="leading" constant="172" id="mCA-rp-OyX"/>
-                            <constraint firstItem="EnX-Nm-siG" firstAttribute="top" secondItem="Ltl-NB-8WN" secondAttribute="bottom" constant="8" id="mk5-2l-fYi"/>
-                            <constraint firstItem="qrf-Xf-djf" firstAttribute="leading" secondItem="ffW-mc-61C" secondAttribute="leading" constant="16" id="n0Y-Z3-HyC"/>
-                            <constraint firstItem="ffW-mc-61C" firstAttribute="trailing" secondItem="EnX-Nm-siG" secondAttribute="trailing" constant="16" id="upQ-Nl-vmy"/>
+                            <constraint firstItem="9C4-QW-kjt" firstAttribute="bottom" secondItem="d1r-MH-DaE" secondAttribute="bottom" constant="553" id="3rT-Tk-268"/>
+                            <constraint firstItem="9C4-QW-kjt" firstAttribute="trailing" secondItem="d1r-MH-DaE" secondAttribute="trailing" constant="16" id="b4k-Qt-Vy2"/>
+                            <constraint firstItem="d1r-MH-DaE" firstAttribute="top" secondItem="9C4-QW-kjt" secondAttribute="top" constant="20" id="qLe-UO-JBg"/>
+                            <constraint firstItem="d1r-MH-DaE" firstAttribute="leading" secondItem="9C4-QW-kjt" secondAttribute="leading" constant="16" id="uQX-LD-70X"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ffW-mc-61C"/>
+                        <viewLayoutGuide key="safeArea" id="9C4-QW-kjt"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Chores" id="Lgv-1J-jr0"/>
+                    <navigationItem key="navigationItem" title="New Roommate" id="Nib-hL-bga">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mj8-pm-fv4"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="TZf-A4-L0Z">
+                            <connections>
+                                <segue destination="jnc-xv-pGc" kind="unwind" unwindAction="unwindToRoommateListWithSender:" id="6H6-zB-Qz3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="d1r-MH-DaE" id="IMn-9s-eCw"/>
+                        <outlet property="saveButton" destination="TZf-A4-L0Z" id="ZoP-DR-SMR"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JpJ-Ly-BOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rg9-IP-MZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jnc-xv-pGc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="851"/>
+            <point key="canvasLocation" x="3397.5999999999999" y="131.78410794602701"/>
+        </scene>
+        <!--Add Chores-->
+        <scene sceneID="FT7-I1-mHf">
+            <objects>
+                <tableViewController id="xdq-BW-MDZ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0HB-9j-ibc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ndx-4L-fLf">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ndx-4L-fLf" id="Q5g-hr-SGr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbN-94-qOn">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xdq-BW-MDZ" id="5KG-S2-kTu"/>
+                            <outlet property="delegate" destination="xdq-BW-MDZ" id="dnb-KS-Sio"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Chores" id="CAP-ZZ-E8w">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="B7R-27-z7Q"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5b9-Za-1LP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1091" y="850"/>
         </scene>
         <!--Spin The Wheel-->
         <scene sceneID="QH6-ow-kxm">
@@ -163,64 +241,6 @@
             </objects>
             <point key="canvasLocation" x="1876" y="852"/>
         </scene>
-        <!--Add Roommates-->
-        <scene sceneID="gR2-ce-upE">
-            <objects>
-                <viewController id="OTx-be-U9q" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FGW-20-2hW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCl-m4-IdW">
-                                <rect key="frame" x="16" y="70" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eTP-Gb-YvP">
-                                <rect key="frame" x="16" y="146" width="343" height="501"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ba8-Jd-Agu">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ba8-Jd-Agu" id="Xol-jh-PpP">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhx-Xb-ayL">
-                                <rect key="frame" x="172" y="108" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aCl-m4-IdW" firstAttribute="top" secondItem="8OK-UH-L9i" secondAttribute="top" constant="58" id="0oD-aX-uzb"/>
-                            <constraint firstItem="aCl-m4-IdW" firstAttribute="leading" secondItem="8OK-UH-L9i" secondAttribute="leading" constant="16" id="5b1-gj-zI4"/>
-                            <constraint firstItem="eTP-Gb-YvP" firstAttribute="top" secondItem="Qhx-Xb-ayL" secondAttribute="bottom" constant="8" id="5zj-WJ-1Ds"/>
-                            <constraint firstItem="8OK-UH-L9i" firstAttribute="trailing" secondItem="aCl-m4-IdW" secondAttribute="trailing" constant="16" id="9Ek-6K-3Sj"/>
-                            <constraint firstItem="8OK-UH-L9i" firstAttribute="bottom" secondItem="eTP-Gb-YvP" secondAttribute="bottom" constant="20" id="EAv-Cc-ecx"/>
-                            <constraint firstItem="eTP-Gb-YvP" firstAttribute="leading" secondItem="8OK-UH-L9i" secondAttribute="leading" constant="16" id="KeK-Mq-CxS"/>
-                            <constraint firstItem="8OK-UH-L9i" firstAttribute="trailing" secondItem="Qhx-Xb-ayL" secondAttribute="trailing" constant="173" id="QUM-Y5-zzm"/>
-                            <constraint firstItem="aCl-m4-IdW" firstAttribute="leading" secondItem="8OK-UH-L9i" secondAttribute="leading" constant="16" id="RBC-PU-WNw"/>
-                            <constraint firstItem="8OK-UH-L9i" firstAttribute="trailing" secondItem="eTP-Gb-YvP" secondAttribute="trailing" constant="16" id="brv-r6-Fdd"/>
-                            <constraint firstItem="eTP-Gb-YvP" firstAttribute="top" secondItem="Qhx-Xb-ayL" secondAttribute="bottom" constant="8" id="cPj-2H-V87"/>
-                            <constraint firstItem="aCl-m4-IdW" firstAttribute="top" secondItem="8OK-UH-L9i" secondAttribute="top" constant="6" id="ciB-C3-A0I"/>
-                            <constraint firstItem="8OK-UH-L9i" firstAttribute="trailing" secondItem="aCl-m4-IdW" secondAttribute="trailing" constant="16" id="gel-W1-0LH"/>
-                            <constraint firstItem="Qhx-Xb-ayL" firstAttribute="top" secondItem="aCl-m4-IdW" secondAttribute="bottom" constant="8" id="jx6-qr-PJF"/>
-                            <constraint firstItem="Qhx-Xb-ayL" firstAttribute="leading" secondItem="8OK-UH-L9i" secondAttribute="leading" constant="172" id="ui2-Vt-Jbn"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="8OK-UH-L9i"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add Roommates" id="esi-w1-0TF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="icU-cj-PMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1876" y="133.5832083958021"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="zNr-1n-jIk">
             <objects>
@@ -238,6 +258,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLT-Ed-Y9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nxl-pY-fUf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="il6-Q5-NJ5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qkl-rg-9R1">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MVJ-ub-Txf" kind="relationship" relationship="rootViewController" id="r51-hE-3UR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Sq-yV-YeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2620" y="131.78410794602701"/>
         </scene>
     </scenes>
 </document>
