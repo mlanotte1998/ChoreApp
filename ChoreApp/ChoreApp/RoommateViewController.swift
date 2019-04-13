@@ -52,6 +52,9 @@ class RoommateViewController: UIViewController, UITextFieldDelegate,
     
 
     //MARK: Navigation
+    @IBAction func Cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     

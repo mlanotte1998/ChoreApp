@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p4Z-27-8WQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p4Z-27-8WQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -145,7 +145,11 @@
                         <viewLayoutGuide key="safeArea" id="9C4-QW-kjt"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Roommate" id="Nib-hL-bga">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mj8-pm-fv4"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mj8-pm-fv4">
+                            <connections>
+                                <action selector="Cancel:" destination="MVJ-ub-Txf" id="9vf-pX-B89"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="TZf-A4-L0Z">
                             <connections>
                                 <segue destination="jnc-xv-pGc" kind="unwind" unwindAction="unwindToRoommateListWithSender:" id="6H6-zB-Qz3"/>
@@ -171,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chore Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ksf-L8-I21">
-                                <rect key="frame" x="16" y="84" width="343" height="30"/>
+                                <rect key="frame" x="16" y="84" width="343" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YbP-Sd-nyb"/>
                                 </constraints>
