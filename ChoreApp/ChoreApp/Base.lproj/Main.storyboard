@@ -78,7 +78,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chore Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2jb-KB-7WT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chore Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2jb-KB-7WT">
                                 <rect key="frame" x="16" y="84" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -87,12 +87,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2jb-KB-7WT" firstAttribute="leading" secondItem="fYB-ho-TqV" secondAttribute="leading" constant="16" id="2DI-5o-r2s"/>
+                            <constraint firstItem="fYB-ho-TqV" firstAttribute="trailing" secondItem="2jb-KB-7WT" secondAttribute="trailing" constant="16" id="FFa-Xc-LWF"/>
                             <constraint firstItem="2jb-KB-7WT" firstAttribute="top" secondItem="fYB-ho-TqV" secondAttribute="top" constant="20" id="HcS-PT-KOf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fYB-ho-TqV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Chore" id="RKl-Ou-KYD">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="qdq-IO-WnW"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="qdq-IO-WnW">
+                            <connections>
+                                <action selector="Cancel:" destination="asd-Hp-bO6" id="013-Pr-86o"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="Wjj-Kb-q9h">
                             <connections>
                                 <segue destination="S1J-W5-qpY" kind="unwind" unwindAction="unwindToChoreListWithSender:" id="W3g-02-a0G"/>
@@ -118,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Xbe-gq-xZH" customClass="ChoreTableViewCell" customModule="ChoreApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoreTableViewCell" id="Xbe-gq-xZH" customClass="ChoreTableViewCell" customModule="ChoreApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xbe-gq-xZH" id="K6W-dl-r5g" customClass="ChoreTableViewCell" customModule="ChoreApp" customModuleProvider="target">
@@ -145,11 +151,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Chores" id="geY-s6-BWz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NBd-qk-ox5">
-                            <connections>
-                                <segue destination="bTT-c9-Poh" kind="presentation" id="l8Z-Vn-wQO"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" id="1Au-fu-RH9"/>
+                            <barButtonItem systemItem="add" id="NBd-qk-ox5">
+                                <connections>
+                                    <segue destination="bTT-c9-Poh" kind="presentation" id="l8Z-Vn-wQO"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfC-0p-cwS" userLabel="First Responder" sceneMemberID="firstResponder"/>

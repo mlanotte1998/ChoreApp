@@ -20,7 +20,7 @@ class ChoreTableViewController: UITableViewController {
         //loadSampleRoommates()
         
         // Use the edit button item provided by the table view controller.
-        //navigationItem.rightBarButtonItem = editButtonItem
+        navigationItem.rightBarButtonItem = editButtonItem
     }
     
     // MARK: - Table view data source
