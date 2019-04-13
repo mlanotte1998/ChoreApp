@@ -32,6 +32,8 @@ class ChoreTableViewController: UITableViewController {
         return chores.count
     }
     
+    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ChoreTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ChoreTableViewCell
@@ -45,6 +47,8 @@ class ChoreTableViewController: UITableViewController {
         
         return cell
     }
+ 
+ */ 
     
     /*
      // Override to support conditional editing of the table view.

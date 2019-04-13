@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class RoommateTableViewController: UITableViewController {
     
@@ -127,5 +128,25 @@ class RoommateTableViewController: UITableViewController {
         let r4 = Roommate(name: name4)
         roommates += [r1, r2, r3, r4]
     }
+    
+    /*
+    
+    private func saveRoommates() {
+        let isSuccessfulSave = NSKeyedArchiver.archivedDataWithRootObject(roommates, toFile: Roommate.ArchiveURL.path)
+        
+        if isSuccessfulSave {
+            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadMeals() -> [Roommate]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Roommate.ArchiveURL.path) as? [Roommate]
+    }
+ 
+ */ 
+    
+    
 
 }
