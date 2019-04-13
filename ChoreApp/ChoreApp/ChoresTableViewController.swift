@@ -1,5 +1,5 @@
 //
-//  RoommateTableViewController.swift
+//  ChoresTableViewController.swift
 //  ChoreApp
 //
 //  Created by William Wallace on 4/13/19.
@@ -18,6 +18,9 @@ class ChoreTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //loadSampleRoommates()
+        
+        // Use the edit button item provided by the table view controller.
+        //navigationItem.rightBarButtonItem = editButtonItem
     }
     
     // MARK: - Table view data source
@@ -46,6 +49,7 @@ class ChoreTableViewController: UITableViewController {
         return cell
     }
     
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -65,25 +69,7 @@ class ChoreTableViewController: UITableViewController {
         }
     }
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
     
     /*
      // Override to support rearranging the table view.
@@ -112,6 +98,8 @@ class ChoreTableViewController: UITableViewController {
     
     
     
+    
+    
     // MARK: Actions
     
     @IBAction func unwindToChoreList(sender: UIStoryboardSegue) {
@@ -122,22 +110,5 @@ class ChoreTableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
     }
-    
-    
-    
-    
-    // MARK: Privates
-    
-    private func loadSampleRoommates() {
-        let name1 = "Will"
-        let name2 = "Chris"
-        let name3 = "Field"
-        let name4 = "Zach"
-        let r1 = Chore(name: name1)
-        let r2 = Chore(name: name2)
-        let r3 = Chore(name: name3)
-        let r4 = Chore(name: name4)
-        chores += [r1, r2, r3, r4]
-    }
-    
+
 }

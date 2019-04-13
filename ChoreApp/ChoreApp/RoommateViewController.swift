@@ -44,7 +44,6 @@ class RoommateViewController: UIViewController, UITextFieldDelegate,
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
-        navigationItem.title = textField.text
     }
  
 

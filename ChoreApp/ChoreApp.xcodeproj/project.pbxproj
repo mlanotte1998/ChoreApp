@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E819BFF122627A27005BA4DE /* ChoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E819BFF022627A27005BA4DE /* ChoreTableViewController.swift */; };
+		E80F3CAF2262919B00D35B57 /* ChoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F3CAE2262919B00D35B57 /* ChoresTableViewController.swift */; };
+		E80F3CB12262923C00D35B57 /* ChoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F3CB02262923C00D35B57 /* ChoreTableViewCell.swift */; };
+		E80F3CB3226292BD00D35B57 /* ChoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F3CB2226292BD00D35B57 /* ChoreViewController.swift */; };
 		E819BFF522627A77005BA4DE /* Chore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E819BFF422627A77005BA4DE /* Chore.swift */; };
-		E819BFF722627B81005BA4DE /* ChoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E819BFF622627B81005BA4DE /* ChoreViewController.swift */; };
 		E855AEF22262323700227380 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E855AEF12262323700227380 /* AppDelegate.swift */; };
 		E855AEF42262323700227380 /* RoommateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E855AEF32262323700227380 /* RoommateViewController.swift */; };
 		E855AEF72262323700227380 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E855AEF52262323700227380 /* Main.storyboard */; };
@@ -21,9 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E819BFF022627A27005BA4DE /* ChoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTableViewController.swift; sourceTree = "<group>"; };
+		E80F3CAE2262919B00D35B57 /* ChoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoresTableViewController.swift; sourceTree = "<group>"; };
+		E80F3CB02262923C00D35B57 /* ChoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTableViewCell.swift; sourceTree = "<group>"; };
+		E80F3CB2226292BD00D35B57 /* ChoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreViewController.swift; sourceTree = "<group>"; };
 		E819BFF422627A77005BA4DE /* Chore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chore.swift; sourceTree = "<group>"; };
-		E819BFF622627B81005BA4DE /* ChoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreViewController.swift; sourceTree = "<group>"; };
 		E855AEEE2262323700227380 /* ChoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E855AEF12262323700227380 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E855AEF32262323700227380 /* RoommateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoommateViewController.swift; sourceTree = "<group>"; };
@@ -66,20 +68,14 @@
 		E855AEF02262323700227380 /* ChoreApp */ = {
 			isa = PBXGroup;
 			children = (
+				E80F3CAE2262919B00D35B57 /* ChoresTableViewController.swift */,
+				E80F3CB02262923C00D35B57 /* ChoreTableViewCell.swift */,
 				E819BFF422627A77005BA4DE /* Chore.swift */,
 				E855AEF12262323700227380 /* AppDelegate.swift */,
-<<<<<<< HEAD
-				E855AEF32262323700227380 /* ViewController.swift */,
-				E819BFF622627B81005BA4DE /* ChoreViewController.swift */,
-				E855AEF52262323700227380 /* Main.storyboard */,
-				E855AF062262525400227380 /* RoommateTableViewController.swift */,
-				E855AF0A2262797400227380 /* ChoreTableViewCell.swift */,
-				E819BFF022627A27005BA4DE /* ChoreTableViewController.swift */,
-=======
 				E855AEF32262323700227380 /* RoommateViewController.swift */,
+				E80F3CB2226292BD00D35B57 /* ChoreViewController.swift */,
 				E855AEF52262323700227380 /* Main.storyboard */,
 				E855AF062262525400227380 /* RoommateTableViewController.swift */,
->>>>>>> a0206bb3a8e55467eb581c1ed4425fb292aacbe7
 				E855AF082262532700227380 /* Roommate.swift */,
 				E855AF032262504100227380 /* RoommateTableViewCell.swift */,
 				E855AEF82262323800227380 /* Assets.xcassets */,
@@ -160,17 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80F3CB12262923C00D35B57 /* ChoreTableViewCell.swift in Sources */,
 				E855AF052262504100227380 /* RoommateTableViewCell.swift in Sources */,
 				E855AF072262525400227380 /* RoommateTableViewController.swift in Sources */,
-				E819BFF122627A27005BA4DE /* ChoreTableViewController.swift in Sources */,
 				E855AF092262532700227380 /* Roommate.swift in Sources */,
-<<<<<<< HEAD
-				E855AF0B2262797400227380 /* ChoreTableViewCell.swift in Sources */,
-				E819BFF722627B81005BA4DE /* ChoreViewController.swift in Sources */,
-				E855AEF42262323700227380 /* ViewController.swift in Sources */,
-=======
+				E80F3CB3226292BD00D35B57 /* ChoreViewController.swift in Sources */,
 				E855AEF42262323700227380 /* RoommateViewController.swift in Sources */,
->>>>>>> a0206bb3a8e55467eb581c1ed4425fb292aacbe7
+				E855AEF42262323700227380 /* RoommateViewController.swift in Sources */,
+				E80F3CAF2262919B00D35B57 /* ChoresTableViewController.swift in Sources */,
 				E855AEF22262323700227380 /* AppDelegate.swift in Sources */,
 				E819BFF522627A77005BA4DE /* Chore.swift in Sources */,
 			);
