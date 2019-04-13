@@ -87,7 +87,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nne-Na-ACb">
-                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -118,7 +118,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izb-ME-CbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="132"/>
+            <point key="canvasLocation" x="1876" y="131.78410794602701"/>
         </scene>
         <!--New Roommate-->
         <scene sceneID="MlO-Nb-4yb">
@@ -162,30 +162,77 @@
             </objects>
             <point key="canvasLocation" x="3397.5999999999999" y="131.78410794602701"/>
         </scene>
+        <!--New Chore-->
+        <scene sceneID="LoX-Ej-xzK">
+            <objects>
+                <viewController id="es2-v6-Vio" customClass="ChoreViewController" customModule="ChoreApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q3g-sO-K6D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chore Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ksf-L8-I21">
+                                <rect key="frame" x="16" y="84" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YbP-Sd-nyb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mPS-KY-hQg" firstAttribute="bottom" secondItem="Ksf-L8-I21" secondAttribute="bottom" constant="561" id="0SQ-9v-lDQ"/>
+                            <constraint firstItem="mPS-KY-hQg" firstAttribute="trailing" secondItem="Ksf-L8-I21" secondAttribute="trailing" constant="16" id="dkn-US-87b"/>
+                            <constraint firstItem="Ksf-L8-I21" firstAttribute="top" secondItem="mPS-KY-hQg" secondAttribute="top" constant="20" id="tzc-q3-SnO"/>
+                            <constraint firstItem="Ksf-L8-I21" firstAttribute="leading" secondItem="mPS-KY-hQg" secondAttribute="leading" constant="16" id="uQ7-MZ-RNj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mPS-KY-hQg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Chore" id="OTH-KC-tFd">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="0na-VM-uQl"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="8sB-Zq-E8E">
+                            <connections>
+                                <segue destination="rsW-MO-BF5" kind="unwind" unwindAction="unwindToRoommateListWithSender:" id="LgT-Pf-jt5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="8sB-Zq-E8E" id="GL9-Po-1Hr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhA-5p-r7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rsW-MO-BF5" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="488.80000000000001" y="857.72113943028489"/>
+        </scene>
         <!--Add Chores-->
         <scene sceneID="FT7-I1-mHf">
             <objects>
-                <tableViewController id="xdq-BW-MDZ" sceneMemberID="viewController">
+                <tableViewController id="xdq-BW-MDZ" customClass="ChoreTableViewController" customModule="ChoreApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0HB-9j-ibc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ndx-4L-fLf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ndx-4L-fLf" customClass="ChoreTableViewCell" customModule="ChoreApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ndx-4L-fLf" id="Q5g-hr-SGr">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ndx-4L-fLf" id="Q5g-hr-SGr" customClass="ChoreTableViewCell" customModule="ChoreApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbN-94-qOn">
-                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="SbN-94-qOn" id="wwc-ax-H0J"/>
+                                    </connections>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -195,12 +242,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Chores" id="CAP-ZZ-E8w">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="B7R-27-z7Q"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="B7R-27-z7Q">
+                            <connections>
+                                <segue destination="Qnd-Dt-FzS" kind="presentation" identifier="AddItem" id="nGf-kq-XcR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5b9-Za-1LP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1091" y="850"/>
+            <point key="canvasLocation" x="2029.5999999999999" y="849.62518740629696"/>
         </scene>
         <!--Spin The Wheel-->
         <scene sceneID="QH6-ow-kxm">
@@ -239,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwE-zq-rIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876" y="852"/>
+            <point key="canvasLocation" x="2815.1999999999998" y="851.42428785607206"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zNr-1n-jIk">
@@ -276,6 +327,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Sq-yV-YeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2620" y="131.78410794602701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MXc-5m-br8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qnd-Dt-FzS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wik-HQ-3RA">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="es2-v6-Vio" kind="relationship" relationship="rootViewController" id="Zgg-JN-G7b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rh5-lk-yXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233" y="858"/>
         </scene>
     </scenes>
 </document>
