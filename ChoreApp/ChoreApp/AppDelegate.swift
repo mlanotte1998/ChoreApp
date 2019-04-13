@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  ChoreApp
 //
-//  Created by Michael Lanotte on 4/13/19.
-//  Copyright © 2019 Michael Lanotte. All rights reserved.
+//  Created by William Wallace on 4/13/19.
+//  Copyright © 2019 William Wallace. All rights reserved.
 //
 
 import UIKit
