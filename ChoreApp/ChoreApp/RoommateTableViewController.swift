@@ -22,6 +22,10 @@ class RoommateTableViewController: UITableViewController {
         
         // Use the edit button item provided by the table view controller.
         navigationItem.rightBarButtonItem = editButtonItem
+        
+        if let savedRoommates = loadRoommates() {
+            roommates += savedRoommates
+        }
     }
 
     // MARK: - Table view data source
@@ -64,6 +68,7 @@ class RoommateTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             roommates.remove(at: indexPath.row)
+            saveRoommates()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -109,6 +114,8 @@ class RoommateTableViewController: UITableViewController {
             let newIndexPath = IndexPath(row: roommates.count, section: 0)
             roommates.append(roommate)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+            saveRoommates()
         }
     }
     
@@ -129,24 +136,55 @@ class RoommateTableViewController: UITableViewController {
         roommates += [r1, r2, r3, r4]
     }
     
-    /*
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
     
     private func saveRoommates() {
-        let isSuccessfulSave = NSKeyedArchiver.archivedDataWithRootObject(roommates, toFile: Roommate.ArchiveURL.path)
-        
-        if isSuccessfulSave {
-            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save meals...", log: OSLog.default, type: .error)
-        }
-    }
-    
-    private func loadMeals() -> [Roommate]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Roommate.ArchiveURL.path) as? [Roommate]
-    }
- 
- */ 
-    
-    
+        var namesText = ""
+        let fileURL = Roommate.ArchiveURL
 
+        for Roommate in roommates {
+            namesText += Roommate.name
+            namesText += "\n"
+        }
+        do {
+            try namesText.write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch {
+            print("failed with error: \(error)")
+        }
+        
+    }
+            
+           
+
+    
+    private func loadRoommates() -> [Roommate]?  {
+        let fileURL = Roommate.ArchiveURL
+        do {
+            let text2 = try String(contentsOf: fileURL, encoding: .utf8)
+            
+            var loadedRoommates = [Roommate]()
+            
+            text2.enumerateLines { line, _ in
+                let loadedRoommate = Roommate(name: line)
+                loadedRoommates.append(loadedRoommate)
+            }
+            
+            return loadedRoommates
+            
+            
+            
+            
+        }
+        catch {
+            print("failed with error: \(error)")
+            return [Roommate]()
+        }
+        
+    }
+    
 }
