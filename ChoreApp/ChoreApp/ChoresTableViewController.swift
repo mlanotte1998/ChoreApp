@@ -21,6 +21,10 @@ class ChoreTableViewController: UITableViewController {
         
         // Use the edit button item provided by the table view controller.
         navigationItem.rightBarButtonItem = editButtonItem
+        
+        if let savedChores = loadChores() {
+            chores += savedChores
+        }
     }
     
     // MARK: - Table view data source
@@ -63,6 +67,7 @@ class ChoreTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             chores.remove(at: indexPath.row)
+            saveChores()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -108,7 +113,53 @@ class ChoreTableViewController: UITableViewController {
             let newIndexPath = IndexPath(row: chores.count, section: 0)
             chores.append(chore)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+            saveChores()
         }
     }
-
+    
+    private func saveChores() {
+        var namesText = ""
+        let fileURL = Chore.ArchiveURL
+        
+        for chore in chores {
+            namesText += chore.name
+            namesText += "\n"
+        }
+        do {
+            try namesText.write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch {
+            print("failed with error: \(error)")
+        }
+        
+    }
+    
+    
+    
+    
+    private func loadChores() -> [Chore]?  {
+        let fileURL = Chore.ArchiveURL
+        do {
+            let text2 = try String(contentsOf: fileURL, encoding: .utf8)
+            
+            var loadedChores = [Chore]()
+            
+            text2.enumerateLines { line, _ in
+                let loadedChore = Chore(name: line)
+                loadedChores.append(loadedChore)
+            }
+            
+            return loadedChores
+            
+            
+            
+            
+        }
+        catch {
+            print("failed with error: \(error)")
+            return [Chore]()
+        }
+        
+    }
+    
 }
